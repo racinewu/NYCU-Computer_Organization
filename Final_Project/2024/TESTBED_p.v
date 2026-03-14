@@ -16,7 +16,7 @@ integer i;
 initial begin
     $dumpfile("SP_p.vcd");
     $dumpvars(0,TESTBED);
-	for(i = 0;i < 32;i = i + 1) begin
+	for(i = 0; i < 32; i = i + 1) begin
         $dumpvars(0, My_SP.r[i]);
 	end
 end
