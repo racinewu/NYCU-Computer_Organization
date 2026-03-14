@@ -16,10 +16,10 @@ Lecturer: 劉志尉 Chih-Wei Liu
 - Parallel Processors from Client to Cloud
 
 ## Quiz
-- [Quiz1](/Quiz/Quiz_1.pdf)
-- [Quiz2](/Quiz/Quiz_2.pdf)
-- [Quiz4](/Quiz/Quiz_4.pdf)
-- [Quiz5](/Quiz/Quiz_5.pdf)
+- Quiz1
+- Quiz2
+- Quiz4
+- Quiz5
 
 ## Homework
 - HW1
