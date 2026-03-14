@@ -5,11 +5,10 @@ The Simple Processor is a digital hardware design that simulates the behavior of
 Given a stream of 32-bit instructions, the processor must correctly decode and execute each instruction while maintaining the internal register file, program counter (PC), and memory interactions. The processor should compute results based on register operands, immediate values, and memory accesses, while ensuring the correct instruction sequence and execution timing. The output includes updated register values, memory operations, and the next instruction address for continuous execution.
 
 ## Features
-- **Name**: Descriptions
-
-## Processing Pipeline
-1. **Name**: Descriptions
-
+- **Instruction Set Compatibility**: Supports instruction sets used in the 2021–2024 course projects.
+- **Extensible Architecture**: Designed with a clean and modular structure for easy future extension.
+- **FSM Implementation**: The standard version uses an FSM to control instruction execution.
+- **Pipelined Implementation**: A pipelined version improves throughput by overlapping instruction stages.
 
 ## Environment:
 |  Operating System  |  HDL Simulator Version  | Verilog Standard |
@@ -29,6 +28,7 @@ Final_Project/
   │   ├── TESTBED.v
   │   └── TESTBED_p.v
   ├── SP.v
+  ├── SP_pipeline.v
   │
   └── README.md
 ```
@@ -38,26 +38,29 @@ Final_Project/
 To compile the Verilog design, simply run
 ```
 cd <year>
-iverilog -o test TESTBED.v
+iverilog -o test TESTBED.v     // for non-pipeline design
+iverilog -o test_p TESTBED_p.v // for pipeline design
 ```
 ### How to execute
 Run the simulation with
 ```
-vvp test
+vvp test   // for non-pipeline design
+vvp test_p // for pipeline design
 ```
 ### How to plot
 To visualize the simulation waveforms and inspect the signal transitions
 ```
-gtkwave SP.vcd &
+gtkwave SP.vcd &   // for non-pipeline design
+gtkwave SP_p.vcd & // for pipeline design
 ```
 
 ## Experiment
 <p align="center">
-  <img src="/Final_Project/img/success.png" alt="Success Result" width="800">
+  <img src="./img/success.png" alt="Success Result" width="800">
 </p>
 <p align="center">Figure 1. Success result</p>
 
 <p align="center">
-  <img src="/Final_Project/img/fail.png" alt="Fail Result" width="800">
+  <img src="./img/fail.png" alt="Fail Result" width="800">
 </p>
 <p align="center">Figure 2. Fail result</p>
